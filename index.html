@@ -29,10 +29,11 @@
         <header>
             <h1>🛒 The Midnight Grocery Store</h1>
             <p> Open until 3:00 PM tomorrow!</p>
+             <input type="text" id="searchBar" placeholder="Search for groceries..." onkeyup="searchItems()">
          </header>
-    <main class="shop-container">
+         <main class="shop-container">
         
-        <div class="item-card">
+        <div class="item-card">  
             <img src="apple.jpeg" alt="Apple">
             <h2> Apple</h2>
             <p class="price">$5.00</p>
@@ -198,6 +199,11 @@
                 cart[name] = { price: price, qty: 1 };
             }
             renderCart();
+
+          const icon = document.getElementById('cart-icon');
+          icon.classList.add('cart-bounce');
+          setTimeout(() => icon.classList.remove('cart-bounce'), 300);
+
         }
 
         function changeQty(name, amount) {
@@ -264,6 +270,21 @@
                 emoji.innerText = "🔇"; 
             }
         }
+
+        function searchItems() {
+    let input = document.getElementById('searchBar').value.toLowerCase();
+    let cards = document.getElementsByClassName('item-card');
+
+    for (let card of cards) {
+        let name = card.getElementsByTagName('h2')[0].innerText.toLowerCase();
+        if (name.includes(input)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+    }
+}
+
         </script>
 
     </body>

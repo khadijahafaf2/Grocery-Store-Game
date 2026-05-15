@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mega Grocery Shop</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+         
+        <div id="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+        
+        <div id="cart-window" class="hidden">
+            <h2>Your Basket</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+            <button onclick="toggleCart()">Close</button>
+        </div>
+        
+        <header>
+            <h1>🛒 The Midnight Grocery Store</h1>
+            <p> Open until 3:00 PM tomorrow!</p>
+         </header>
+    <main class="shop-container">
+        
+        <div class="item-card">
+            <img src="apple.jpeg" alt="Apple">
+            <h2> Apple</h2>
+            <p class="price">$5.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="milk.jpg" alt="Milk">
+            <h2>Magic Milk</h2>
+            <p class="price">$5.00</p>
+            <button class=" buy-btn" onclick="addToCart('Milk', 5.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="eggs.avif" alt="Milk">
+            <h2>Premium Eggs</h2>
+            <p class="price">$6.00</p>
+            <button class=" buy-btn" onclick="addToCart('Eggs', 6.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Coffee', 3.00)">Add to Cart</button>
+        </div>
+
+
+        <div class="item-card">
+            <img src="sugar.jpeg" alt="Milk">
+            <h2>Sugar</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Sugar', 3.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="bread.jpg" alt="bread">
+            <h2>White Bread</h2>
+            <p class="Price">$5.00</p>
+            <button class=" buy-btn" onclick="addToCart('Bread', 5.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        
+        <div class="item-card">
+            <img src="coffee.webp" alt="Milk">
+            <h2>Hot Coffee</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+        </div>
+
+        </main>
+    
+        <script>
+            function addToCart(itemName, itemPrice) {
+    // 1. Find the list and total in the HTML
+    let list = document.getElementById('cart-items');
+    let totalElement = document.getElementById('cart-total');
+    let countElement = document.getElementById('cart-count');
+
+    // 2. Create a new list item
+    let li = document.createElement('li');
+    li.innerText = itemName + " - $" + itemPrice;
+    list.appendChild(li);
+
+    // 3. Update Total (This converts the text to a number to do math)
+    let currentTotal = parseFloat(totalElement.innerText);
+    let newTotal = currentTotal + itemPrice;
+    totalElement.innerText = newTotal.toFixed(2);
+
+    // 4. Update Count
+    let currentCount = parseInt(countElement.innerText);
+    countElement.innerText = currentCount + 1;
+}
+
+function toggleCart() {
+    document.getElementById('cart-window').classList.toggle('hidden');
+}
+        </script>
+
+    </body>
+</html>

@@ -4,8 +4,16 @@
         <meta charset="UTF-8">
         <title>Mega Grocery Shop</title>
         <link rel="stylesheet" href="style.css">
+        <audio id="bg-music" loop>
+            <source src="music.weba" type="audio/mpeg">
+        </audio>
+
+        <div id="sound-btn" onclick="toggleMusic()">
+            <span id="sound-emoji"> 🔇</span>
+        </div>
+
     </head>
-    <body>
+     <body>
          
         <div id="cart-icon" onclick="toggleCart()">
             🛒 <span id="cart-count">0</span>
@@ -15,7 +23,7 @@
             <h2>Your Basket</h2>
             <ul id="cart-items"></ul>
             <p>Total: $<span id="cart-total">0.00</span></p>
-            <button onclick="toggleCart()">Close</button>
+            <button onclick="toggleCart()">Close</button>   
         </div>
         
         <header>
@@ -39,14 +47,14 @@
         </div>
 
         <div class="item-card">
-            <img src="eggs.avif" alt="Milk">
+            <img src="eggs.avif" alt="Eggs">
             <h2>Premium Eggs</h2>
             <p class="price">$6.00</p>
             <button class=" buy-btn" onclick="addToCart('Eggs', 6.00)">Add to Cart</button>
         </div>
 
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
+            <img src="coffee.webp" alt="Coffee">
             <h2>Hot Coffee</h2>
             <p class="price">$3.00</p>
             <button class=" buy-btn" onclick="addToCart('Coffee', 3.00)">Add to Cart</button>
@@ -54,7 +62,7 @@
 
 
         <div class="item-card">
-            <img src="sugar.jpeg" alt="Milk">
+            <img src="sugar.jpeg" alt="Sugar">
             <h2>Sugar</h2>
             <p class="price">$3.00</p>
             <button class=" buy-btn" onclick="addToCart('Sugar', 3.00)">Add to Cart</button>
@@ -68,79 +76,194 @@
         </div>
 
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
-            <h2>Hot Coffee</h2>
+            <img src="bagutte.jpeg" alt="bagutte">
+            <h2>Baguette</h2>
             <p class="price">$3.00</p>
-            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+            <button class=" buy-btn" onclick="addToCart('Baguette', 3.00)">Add to Cart</button>
         </div>
 
         
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
-            <h2>Hot Coffee</h2>
+            <img src="salt.jpeg" alt="Salt">
+            <h2>Salt</h2>
             <p class="price">$3.00</p>
-            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+            <button class=" buy-btn" onclick="addToCart('Salt', 3.00)">Add to Cart</button>
         </div>
 
         
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
-            <h2>Hot Coffee</h2>
-            <p class="price">$3.00</p>
-            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+            <img src="orange juice.jpeg" alt="Orange Juice">
+            <h2>Orange Juice</h2>
+            <p class="price">$4.00</p>
+            <button class=" buy-btn" onclick="addToCart('Orange Juice', 4.00)">Add to Cart</button>
         </div>
 
         
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
-            <h2>Hot Coffee</h2>
-            <p class="price">$3.00</p>
-            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+            <img src="coke.png" alt="Soda">
+            <h2>Soda</h2>
+            <p class="price">$2.00</p>
+            <button class=" buy-btn" onclick="addToCart('Soda', 2.00)">Add to Cart</button>
         </div>
 
         
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
-            <h2>Hot Coffee</h2>
+            <img src="sandwich.jpeg" alt="sandwich">
+            <h2>Sandwich</h2>
             <p class="price">$3.00</p>
-            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+            <button class=" buy-btn" onclick="addToCart('Sandwich', 3.00)">Add to Cart</button>
         </div>
 
         
         <div class="item-card">
-            <img src="coffee.webp" alt="Milk">
-            <h2>Hot Coffee</h2>
+            <img src="tomato.jpeg" alt="Tomato">
+            <h2>Tomato</h2>
             <p class="price">$3.00</p>
-            <button class=" buy-btn" onclick="addToCart('Apple', 5.00)">Add to Cart</button>
+            <button class=" buy-btn" onclick="addToCart('Tomato', 3.00)">Add to Cart</button>
         </div>
+
+        <div class="item-card">
+            <img src="chips.jpeg" alt="Chips">
+            <h2>Chips</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Chips', 3.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="strawberry.jpeg" alt="Strawberry">
+            <h2>Strawberry</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Strawberry', 3.00)">Add to Cart</button>
+        </div>
+       
+        <div class="item-card">
+            <img src="watermelon.jpeg" alt="Watermelon">
+            <h2>Watermelon</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Watermelon', 3.00)">Add to Cart</button>
+        </div>
+       
+        <div class="item-card">
+            <img src="carrot.jpeg" alt="Carrot">
+            <h2>Carrot</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Carrots', 3.00)">Add to Cart</button>
+        </div>
+       
+        <div class="item-card">
+            <img src="lettuce.jpeg" alt="Lettuce">
+            <h2>Lettuce</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Lettuce', 3.00)">Add to Cart</button>
+        </div>
+        
+        <div class="item-card">
+            <img src="donut.jpeg" alt="Donut">
+            <h2>Donut</h2>
+            <p class="price">$3.00</p>
+            <button class=" buy-btn" onclick="addToCart('Donut', 3.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="cupcake.jpeg" alt="Cupcake">
+            <h2>Cupcake</h2>
+            <p class="price">$1.00</p>
+            <button class=" buy-btn" onclick="addToCart('Cupcake', 1.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="cookies.jpeg" alt="Cookies">
+            <h2>Cookies</h2>
+            <p class="price">$2.00</p>
+            <button class=" buy-btn" onclick="addToCart('Cookies', 2.00)">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="fried chicken.jpeg" alt="Fried Chicken">
+            <h2>Fried Chicken</h2>
+            <p class="price">$5.00</p>
+            <button class=" buy-btn" onclick="addToCart('Fried Chicken', 5.00)">Add to Cart</button>
+        </div>
+
 
         </main>
     
         <script>
-            function addToCart(itemName, itemPrice) {
-    // 1. Find the list and total in the HTML
-    let list = document.getElementById('cart-items');
-    let totalElement = document.getElementById('cart-total');
-    let countElement = document.getElementById('cart-count');
+         let cart = {}; 
 
-    // 2. Create a new list item
-    let li = document.createElement('li');
-    li.innerText = itemName + " - $" + itemPrice;
-    list.appendChild(li);
+        function addToCart(name, price) {
+            if (cart[name]) {
+                cart[name].qty += 1;
+            } else {
+                cart[name] = { price: price, qty: 1 };
+            }
+            renderCart();
+        }
 
-    // 3. Update Total (This converts the text to a number to do math)
-    let currentTotal = parseFloat(totalElement.innerText);
-    let newTotal = currentTotal + itemPrice;
-    totalElement.innerText = newTotal.toFixed(2);
+        function changeQty(name, amount) {
+            if (cart[name]) {
+                cart[name].qty += amount;
+                if (cart[name].qty <= 0) {
+                    delete cart[name];
+                }
+            }
+            renderCart();
+        }
 
-    // 4. Update Count
-    let currentCount = parseInt(countElement.innerText);
-    countElement.innerText = currentCount + 1;
-}
+        function removeItem(name) {
+            delete cart[name];
+            renderCart();
+        }
 
-function toggleCart() {
-    document.getElementById('cart-window').classList.toggle('hidden');
-}
+        function renderCart() {
+            const list = document.getElementById('cart-items');
+            const totalElement = document.getElementById('cart-total');
+            const countElement = document.getElementById('cart-count');
+            
+            list.innerHTML = ""; 
+            let newTotal = 0;
+            let newCount = 0;
+
+            for (let name in cart) {
+                let item = cart[name];
+                newTotal += item.price * item.qty;
+                newCount += item.qty;
+
+                let li = document.createElement('li');
+                li.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                        <span><strong>${name}</strong> ($${item.price.toFixed(2)})</span>
+                        <div>
+                            <button onclick="changeQty('${name}', -1)">-</button>
+                            <span style="margin: 0 5px;">${item.qty}</span>
+                            <button onclick="changeQty('${name}', 1)">+</button>
+                            <button onclick="removeItem('${name}')" style="margin-left:10px; cursor:pointer; background:none; border:none;">🗑️</button>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(li);
+            }
+
+            if (totalElement) totalElement.innerText = newTotal.toFixed(2);
+            if (countElement) countElement.innerText = newCount;
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-window').classList.toggle('hidden');
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const emoji = document.getElementById('sound-emoji');
+
+            if (music.paused) {
+                music.play();
+                emoji.innerText = "🔊"; 
+            } else {
+                music.pause();
+                emoji.innerText = "🔇"; 
+            }
+        }
         </script>
 
     </body>
